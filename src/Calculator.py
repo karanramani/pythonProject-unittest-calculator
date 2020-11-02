@@ -7,6 +7,11 @@ def addition(a, b):
     c = a + b
     return c
 
+def subtraction(a, b):
+    a = float(a)
+    b = float(b)
+    c = b - a
+    return c
 
 class Calculator:
     result = 0
@@ -18,6 +23,9 @@ class Calculator:
         self.result = addition(a, b)
         return self.result
 
+    def subtract(self, a, b):
+        self.result = subtraction(a, b)
+        return self.result
 
 class CSVStats(Calculator):
     data = []
