@@ -3,5 +3,5 @@
 ##Instructions: 
 ### To use this Calculator please run program from the file Name:
 
-* main.py
+* src/my_calculator.py
  
