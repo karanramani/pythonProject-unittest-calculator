@@ -1,36 +1,32 @@
 import unittest
-from Calculator import Calculator
-from CsvReader import CsvReader
 
+from addition import MyAdditionTestCase
 
-class MyAdditionTestCase(unittest.TestCase):
-    def setUp(self) -> None:
-        self.calculator = Calculator()
+MyAdditionTestCase()
 
-    # def test_instantiate_calculator(self):
-    #     self.assertIsInstance(self.calculator, Calculator)
+from subtraction import MySubtractionTestCase
 
-    def test_addition(self):
-        test_data = CsvReader('/src/Unit Test Addition.csv').data
-        for row in test_data:
-            self.assertEqual(self.calculator.add(row['Value 1'], row['Value 2']), float(row['Result']))
-            self.assertEqual(self.calculator.result, float(row['Result']))
+MySubtractionTestCase()
 
-    def test_subtraction(self):
-        test_data = CsvReader('/src/Unit Test Subtraction.csv').data
-        for row in test_data:
-            self.assertEqual(self.calculator.subtract(row['Value 1'], row['Value 2']), float(row['Result']))
-            self.assertEqual(self.calculator.result, float(row['Result']))
+from multiplication import MyMultiplicationTestCase
 
-    def test_multiplication(self):
-        test_data = CsvReader('/src/Unit Test Multiplication.csv').data
-        for row in test_data:
-            self.assertEqual(self.calculator.multiply(row['Value 1'], row['Value 2']), float(row['Result']))
-            self.assertEqual(self.calculator.result, float(row['Result']))
+MyMultiplicationTestCase()
 
-    # def test_results_property(self):
-    #     self.assertEqual(self.calculator.result, 0)
+from division import MyDivisionTestCase
 
+MyDivisionTestCase()
+
+from square import MySquareTestCase
+
+MySquareTestCase()
+
+from squareroot import MySquarerootTestCase
+
+MySquarerootTestCase()
+
+from stringmultiply import MyStringMultiplicationTestCase
+
+MyStringMultiplicationTestCase()
 
 if __name__ == '__main__':
     unittest.main()
